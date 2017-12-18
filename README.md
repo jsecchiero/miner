@@ -19,6 +19,6 @@ docker run --name libvirtd --privileged -d -v /sys/fs/cgroup:/sys/fs/cgroup:rw -
 
 ## note
 
-This project is still in development, more documentation will be added in the future. Stay tuned!
-Actually the hardware support is limited to AMD because i don't have nvidia cards
-Actually only ethminer tool is available
+This project is still in development, more documentation will be added in the future. Stay tuned!  
+Actually the hardware support is limited to AMD because i don't have nvidia cards  
+Actually only ethminer tool is available  
