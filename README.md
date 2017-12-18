@@ -4,8 +4,8 @@ Out-of-box toolkit for miners
 
 ## requirements
 
-- cpu feature *VT-d*
-- kernel paramenter *modprobe.blacklist=_your gpu driver_*
+- cpu feature _VT-d_
+- kernel paramenter _modprobe.blacklist=your gpu driver_
 - docker
 - check apparmor/selinux
 
