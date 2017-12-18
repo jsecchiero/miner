@@ -1,0 +1,11 @@
+[Unit]
+Description=Vagrant startup VM
+After=libvirtd.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/var/lib/vagrant
+ExecStart=/usr/local/sbin/vagrant-up
+
+[Install]
+WantedBy=multi-user.target

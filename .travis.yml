@@ -1,0 +1,14 @@
+language: __garnet__
+services:
+  - docker
+install:
+  - curl -L -o packer.zip https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip && unzip -d bin packer.zip
+  - curl -L -o vagrant.deb https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
+  - sudo apt-get install -f $(pwd)/vagrant.deb
+  - sudo apt-get install -y qemu libvirt-bin ebtables dnsmasq libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev
+script:
+  - rm Vagrantfile
+  - ./build-packer.sh
+env:
+  global:
+  secure: "DP5JpO6ekzeOLNtJSoOgIs7QMcATrvkwqk1w+SlNiLhMNe4XTtmFXqpBv0A3VfQ0DtNIU7rYZ559ax1P2P3v4aAYf8nB0VOS3gzBBrC+xVcs2D7USaU9ETE9dI0HUp+mUuWMcSAb6bkF+vqQyAn871F5Ii8E4M6wYGUcE7gx/79UmuB8vVfCzN9jDxZzYK+NQEOUhfJ+R5xJNLRHL5FteEY9iWNXCDq0xnAzUXCsGYR8MaqXtxMXHfIvjG9m7hXh0dVjxvbhUC6nfdvD6aQA0NlWzv4OyF+fZ8Vdt1mAH7+zv14vbNsMujzNE0u82nUKRCGo2p+FGhj/k+aBqqVGKxY2d2SsXO+XB7tbRtuuLhfpZ19QpzvdIyjT81SEb87R3R5bngW3tc14YQ0INSax3jkiOizbL1MuaL5sNmc7tIc0Eoa4Qq5DlFEp5w/ZeXpaUYOkXF4TyR5KqRwG3hzSTOy3jlqJdOV92bmTpQy9bVDVu8kCCGf/h2+bVcv8nSvTd9vFik1zt4KDTWVGjINELWKOZ17dnWBMekBkmKK6x0+b1hEH9br73GmyiogDycuQQFJPSfP25/3fLvePK3gvAXYaaO5QZk1YcL3dOhqH7CAcl4Jx9pK5La2Nn5F3sRah6RQnlFWvTQJIXB6Z/rZAChyqSWMHgFj8Jikf8bG2b4s="
