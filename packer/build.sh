@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export PACKER_LOG=1
+export VAGRANT_CWD=/
 
 # Gathering some system info
 echo sudo lscpu
@@ -17,6 +18,7 @@ sudo apt-get install -f $(pwd)/vagrant.deb
 sudo apt-get install -y qemu libvirt-bin ebtables dnsmasq libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev
 
 cd $(dirname $0)
+pwd
 # Download base image
 vagrant box add generic/ubuntu1604 --provider=libvirt --box-version=1.3.25 || true
 # Start build
