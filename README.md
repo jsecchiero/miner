@@ -34,5 +34,5 @@ docker exec -it miner journalctl -u vagrant -f
 This project is still in development, more documentation will be added in the future. Stay tuned!  
 
 
-* _The hardware support is limited to AMD because i don't have any nvidia cards_
-** _Actually only ethminer tool is available_
+*_The hardware support is limited to AMD because i don't have any nvidia cards_  
+**_Actually only ethminer tool is available_
