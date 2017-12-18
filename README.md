@@ -15,7 +15,15 @@ Use the SCRIPT env variable for choose the desired tool or install one yourself
 
 ## example
 
-docker run --name libvirtd --privileged -d -v /sys/fs/cgroup:/sys/fs/cgroup:rw -e SCRIPT="ethminer -M 1 -G -F http://eth-eu.dwarfpool.com/0xe6bc9af3c835e001d74aba0cb16619dbde8f29f0" jsecchiero/miner
+```
+docker run --name miner --privileged -d -v /sys/fs/cgroup:/sys/fs/cgroup:rw -e SCRIPT="ethminer -M 1 -G -F http://eth-eu.dwarfpool.com/0xe6bc9af3c835e001d74aba0cb16619dbde8f29f0" jsecchiero/miner
+```
+
+monitor the running job with
+
+```
+docker exec -it miner journalctl -u vagrant -f
+```
 
 ## note
 

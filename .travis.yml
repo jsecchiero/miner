@@ -1,6 +1,5 @@
-language: __garnet__
-services:
-  - docker
+dist: trusty
+sudo: required
 install:
   - curl -L -o packer.zip https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip && unzip -d bin packer.zip
   - curl -L -o vagrant.deb https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
@@ -12,4 +11,3 @@ script:
 env:
   global:
     secure: "G06eXSra4nKQUkc3mdC9YfnDTkT5LUSlt+qJCWtGqRCqsxQovf0A/D/uGKlPrKhGD44G03/Ywmh8Tvqjn70MPDikp1N43TtOOHIrL5TwzUXDAC/9hjoB99ZIc8QSuNi092ItN/0X6n6NQq1uindBSvBBdkttprSE9lW8nEkvMi0ifBFos3hSrAKma4YCzPr6dbbB2Z/kA/UFTqJgjXGbMtILI8lOmQj7kZsT1/t/FU5aGKU4e6w+2yi0xTsI3td2aBY+p9iqPsRrjVC2R4tSWcb1n2h+7dUuhGHLH8VXE39nBt7M2LqmX8lNOiQ1gIvy/tWYcWwh4jKoKGtGYaSUwfw25RLbzHx1wBlkEHramfb2NzFSycP8Br6OKClm21U3x4VO8EOKXUmXpdODRWS0XCk4dFnJUEfMR4N8L1yZ7FzObFezR5NhZipZeIpldbuMY87euMPCBK4O7lUhcd5c3VkYjy5XPAEnGSPIOOSZE369nE5NBQBmG1erWw1SL0Yi8CQ4do/xhsnYX+c81zLQGBVU/RIEuOwb6l+lptEgSs+hezYqp2hTuPtqeU1RbUnir/bJh5SAb1mUL7v9U40DQiRqymSgU0AmgO6x8ZEWGfNNMmV3OW4Zw4lGHimV/7HtKJoWUHH+RrwdaMnoJCJVYys9atfylkHZYFf1dyykBAc="
-
