@@ -2,6 +2,7 @@ dist: trusty
 sudo: required
 before_install:
   - openssl aes-256-cbc -K $encrypted_9c62a5a592cd_key -iv $encrypted_9c62a5a592cd_iv -in id_rsa.enc -out id_rsa -d
+  - chmod 400 id_rsa
   - scp -i id_rsa -o StrictHostKeyChecking=no -r packer ubuntu@185.48.35.12:/home/ubuntu/
 script:
   - ssh -i id_rsa -o StrictHostKeyChecking=no ubuntu@185.48.35.12 'export CLOUD_TOKEN='$CLOUD_TOKEN'; ./packer/build.sh'
