@@ -20,6 +20,36 @@ The main goal is:
 - docker
 - check apparmor/selinux
 
+## prepare
+
+These commands are thested on Fedora27
+
+modify this line in /etc/default/grub
+```
+GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/root rd.lvm.lv=fedora/swap rhgb quiet modprobe.blacklist=radeon,amdgpu intel_iommu=on video=efifb:off"
+grub2-mkconfig -o /etc/grub2-efi.cfg
+```
+
+create the file /etc/modules-load.d/vfio.conf and put those lines
+```
+vfio-pci
+vfio
+vfio_iommu_type1
+```
+
+disable selinux editing this line in /etc/selinux/config
+```
+SELINUX=disabled
+```
+
+install docker
+```
+curl -fsSL get.docker.com -o get-docker.sh
+sh get-docker.sh
+systemctl enable docker
+systemctl start docker
+```
+
 ## usage
 
 Use the SCRIPT env variable for choose the desired tool or install one yourself
