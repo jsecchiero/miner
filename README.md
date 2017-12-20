@@ -54,6 +54,11 @@ systemctl enable docker
 systemctl start docker
 ```
 
+reboot to make those changes effective
+```
+reboot
+```
+
 ## usage
 
 Use the SCRIPT env variable for choose the desired tool or install one yourself
