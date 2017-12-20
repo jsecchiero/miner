@@ -22,7 +22,7 @@ The main goal is:
 
 ## prepare
 
-These commands are thested on Fedora27
+_These commands are thested on Fedora27_
 
 modify this line in /etc/default/grub
 ```
