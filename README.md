@@ -11,8 +11,8 @@ The main goal is:
 - cpu feature _VT-d_
 - kernel paramenter:
   - modprobe.blacklist=your gpu driver
-  - paramenter video=efifb:off
-  - parameter intel_iommu=on
+  - video=efifb:off
+  - intel_iommu=on
 - kernel module:
   - vfio
   - vfio_iommu_type1
