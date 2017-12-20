@@ -27,6 +27,10 @@ These commands are thested on Fedora27
 modify this line in /etc/default/grub
 ```
 GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/root rd.lvm.lv=fedora/swap rhgb quiet modprobe.blacklist=radeon,amdgpu intel_iommu=on video=efifb:off"
+```
+
+update grub config
+```
 grub2-mkconfig -o /etc/grub2-efi.cfg
 ```
 
