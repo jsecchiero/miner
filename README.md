@@ -9,7 +9,14 @@ The main goal is:
 ## requirements
 
 - cpu feature _VT-d_
-- kernel paramenter _modprobe.blacklist=your gpu driver_
+- kernel paramenter:
+  - modprobe.blacklist=your gpu driver
+  - paramenter video=efifb:off
+  - parameter intel_iommu=on
+- kernel module:
+  - vfio
+  - vfio_iommu_type1
+  - vfio_pci
 - docker
 - check apparmor/selinux
 
@@ -20,7 +27,7 @@ Use the SCRIPT env variable for choose the desired tool or install one yourself
 ## example
 
 ```
-docker run --name miner --restart=always --privileged -d -v /sys/fs/cgroup:/sys/fs/cgroup:rw -e SCRIPT="ethminer -M 1 -G -F http://eth-eu.dwarfpool.com/0xe6bc9af3c835e001d74aba0cb16619dbde8f29f0" jsecchiero/miner
+docker run --name miner --restart=always --privileged -d -v /sys/fs/cgroup:/sys/fs/cgroup:rw -v /dev:/dev -e SCRIPT="ethminer -M 1 -G -F http://eth-eu.dwarfpool.com/0xe6bc9af3c835e001d74aba0cb16619dbde8f29f0" jsecchiero/miner
 ```
 
 monitor the running job with
