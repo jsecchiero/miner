@@ -64,7 +64,7 @@ for the next connection use ssh
 
 ## usage
 
-Use the SCRIPT env variable for choose the desired tool or install one yourself
+Use the SCRIPT env variable for choose the desired tool
 
 ## example
 
