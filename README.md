@@ -19,12 +19,13 @@ The main goal is:
   - vfio_pci
 - docker
 - check apparmor/selinux
+- ssh
 
 ## prepare
 
 _These commands are thested on Fedora27_
 
-modify this line in /etc/default/grub
+modify this line in /etc/default/grub (disable video output)
 ```
 GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/root rd.lvm.lv=fedora/swap rhgb quiet modprobe.blacklist=radeon,amdgpu intel_iommu=on video=efifb:off"
 ```
@@ -58,6 +59,8 @@ reboot to make those changes effective
 ```
 reboot
 ```
+
+for the next connection use ssh
 
 ## usage
 
