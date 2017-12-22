@@ -72,10 +72,14 @@ Use the SCRIPT env variable for choose the desired tool
 docker run --name miner --restart=always --privileged -d -v /sys/fs/cgroup:/sys/fs/cgroup:rw -v /dev:/dev -e SCRIPT="/usr/local/bin/ethminer -M 1 -G -F http://eth-eu.dwarfpool.com/0xe6bc9af3c835e001d74aba0cb16619dbde8f29f0" jsecchiero/miner
 ```
 
-monitor the running job with
-
+list vms
 ```
-docker exec -it miner journalctl -u vagrant -f
+docker exec -it miner vagrant status
+```
+
+monitor the running job with
+```
+docker exec -it miner vagrant ssh miner-amd-0 -c 'journalctl -u tool -f'
 ```
 
 ## note
