@@ -16,9 +16,14 @@
 # The latest version of this script is available on github at
 # https://github.com/kumina/fact-pci_devices
 
-def get_pci_id(name)
+# Parse lspci -v -mm -k output
+# fist column is 'key' and the second is 'value'
+def get_pci_id(key,value)
 
+  # For Centos/Fedora
   lspci = "/usr/sbin/lspci"
+  # For Debian based
+  #lspci = "/usr/bin/lspci"
 
   # We can't do this if we don't know the location of lspci
   if !lspci.empty? and FileTest.exists?(lspci)
@@ -45,8 +50,8 @@ def get_pci_id(name)
 
     pci_filter = {}
     devices.each_key do |a|
-      case devices[a].fetch("Device")
-      when /#{name}/
+      case devices[a].fetch(key)
+      when /#{value}/
         bus = a.split(':')[0]
         slot = a.split(':')[1].split('.')[0]
         pci_id = bus + ':' + slot
