@@ -22,8 +22,8 @@ sudo update-grub
 
 # Install ethmining
 wget -q -O - https://github.com/ethereum-mining/ethminer/releases/download/v0.12.0/ethminer-0.12.0-Linux.tar.gz | sudo tar xvz -C /usr/local/
-chmod +x /usr/local/bin/ethminer
+sudo chmod +x /usr/local/bin/ethminer
 
 # Install nsgminer
-wget -q -O /usr/local/bin/nsgminer https://www.dropbox.com/s/f9yfmc9cs7p6s9e/nsgminer?dl=0
-chmod +x /usr/local/bin/nsgminer
+sudo wget -q -O /usr/local/bin/nsgminer https://www.dropbox.com/s/f9yfmc9cs7p6s9e/nsgminer?dl=0
+sudo chmod +x /usr/local/bin/nsgminer
