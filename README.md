@@ -57,6 +57,7 @@ ip6_tables
 **4\. create a policy for selinux/apparmor or for test disable it**  
 
 _Fedora 27_  
+
 editing this line /etc/selinux/config
 ```
 SELINUX=disabled
