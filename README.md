@@ -4,7 +4,7 @@ Out-of-box toolkit for miners
 
 The main goal is:
 - automatically associate each gpu with the correct VM with the latest driver installed*
-- provide as much possible mining tool**
+- provide as much possible mining tool
 
 ## requirements
 
@@ -117,4 +117,3 @@ This project is still in development, more documentation will be added in the fu
 
 
 *_The hardware support is limited to AMD because i don't have any nvidia cards_  
-**_Actually only ethminer tool is available_
