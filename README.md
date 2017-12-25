@@ -25,15 +25,14 @@ The main goal is:
 ## prepare
 
 1. modify this line in /etc/default/grub (disable video output)  
-
-_Fedora 27_
-```
-GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/root rd.lvm.lv=fedora/swap rhgb quiet modprobe.blacklist=radeon,amdgpu intel_iommu=on video=efifb:off"
-```
-_Ubuntu 16.04_
-```
+ _Fedora 27_
+ ```
+GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/root rd.lvm.lv=fedora/swap rhgb quiet modprobe.blacklist=radeon,amdgpu intel_iommu=on  video=efifb:off"
+ ```
+ _Ubuntu 16.04_
+ ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash modprobe.blacklist=radeon,amdgpu intel_iommu=on video=efifb:off"
-```
+ ```
 
 2. update grub config  
 
