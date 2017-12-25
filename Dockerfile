@@ -33,7 +33,7 @@ RUN sed -i "/Service/a ExecStartPost=\/bin\/chmod 666 /dev/kvm" /usr/lib/systemd
 RUN dnf -y install virt-install virt-manager virt-viewer virt-what virt-who virt-top libvirt-daemon-config-network
 
 RUN vagrant plugin install vagrant-libvirt
-RUN vagrant box add jsecchiero/miner-amd --provider=libvirt --box-version=0.0.1
+RUN vagrant box add jsecchiero/miner-amd --provider=libvirt --box-version=0.0.2
 
 COPY vagrant.service /etc/systemd/system/
 COPY vagrant-up /usr/local/sbin/
