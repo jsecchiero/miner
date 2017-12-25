@@ -24,7 +24,7 @@ The main goal is:
 
 ## prepare
 
-modify this line in /etc/default/grub (disable video output)  
+1. modify this line in /etc/default/grub (disable video output)  
 
 _Fedora 27_
 ```
@@ -35,7 +35,7 @@ _Ubuntu 16.04_
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash modprobe.blacklist=radeon,amdgpu intel_iommu=on video=efifb:off"
 ```
 
-update grub config  
+2. update grub config  
 
 _Fedora 27_
 ```
@@ -46,7 +46,7 @@ _Ubuntu 16.04_
 update-grub
 ```
 
-create the file /etc/modules-load.d/vfio.conf and put those lines
+3. create the file /etc/modules-load.d/vfio.conf and put those lines
 ```
 vfio-pci
 vfio
@@ -54,7 +54,7 @@ vfio_iommu_type1
 ip6_tables
 ```
 
-create a policy for selinux/apparmor or for test disable it  
+4. create a policy for selinux/apparmor or for test disable it  
 
 _Fedora 27_  
 editing this line /etc/selinux/config
@@ -70,7 +70,7 @@ apt-get remove apparmor
 ```
 
 
-install docker
+5. install docker
 ```
 export CHANNEL=stable
 curl -fsSL get.docker.com -o get-docker.sh
@@ -79,7 +79,7 @@ systemctl enable docker
 systemctl start docker
 ```
 
-reboot to make those changes effective
+6. reboot to make those changes effective
 ```
 reboot
 ```
