@@ -17,6 +17,7 @@ The main goal is:
   - vfio
   - vfio_iommu_type1
   - vfio_pci
+  - ip6_tables
 - docker
 - check apparmor/selinux
 - ssh
@@ -48,6 +49,7 @@ create the file /etc/modules-load.d/vfio.conf and put those lines
 vfio-pci
 vfio
 vfio_iommu_type1
+ip6_tables
 ```
 
 create a policy for selinux/apparmor or for test disable it
@@ -84,6 +86,11 @@ for the next connection use ssh
 ## usage
 
 Use the SCRIPT env variable for choose the desired tool
+
+## available tools  
+
+- /usr/local/bin/ethminer
+- /usr/local/bin/nsgminer
 
 ## example
 
