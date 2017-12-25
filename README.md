@@ -51,7 +51,7 @@ vfio_iommu_type1
 ```
 
 create a policy for selinux/apparmor or for test disable it  
-_Fedora 27_
+_Fedora 27_  
 editing this line /etc/selinux/config
 ```
 SELINUX=disabled
