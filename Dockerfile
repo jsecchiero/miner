@@ -16,15 +16,6 @@ rm -f /lib/systemd/system/anaconda.target.wants/*; \
 systemctl enable libvirtd; \
 systemctl enable virtlockd 
 
-#EXPOSE 16509
-
-#RUN echo "listen_tls = 0" >> /etc/libvirt/libvirtd.conf; \
-#echo 'listen_tcp = 1' >> /etc/libvirt/libvirtd.conf; \
-#echo 'tls_port = "16514"' >> /etc/libvirt/libvirtd.conf; \ 
-#echo 'tcp_port = "16509"' >> /etc/libvirt/libvirtd.conf; \
-#echo 'auth_tcp = "none"' >> /etc/libvirt/libvirtd.conf
-
-#RUN echo 'LIBVIRTD_ARGS="--listen"' >> /etc/sysconfig/libvirtd
 RUN mkdir -p /var/lib/libvirt/images/
 
 # Edit the service file which includes ExecStartPost to chmod /dev/kvm
@@ -33,7 +24,7 @@ RUN sed -i "/Service/a ExecStartPost=\/bin\/chmod 666 /dev/kvm" /usr/lib/systemd
 RUN dnf -y install virt-install virt-manager virt-viewer virt-what virt-who virt-top libvirt-daemon-config-network
 
 RUN vagrant plugin install vagrant-libvirt
-RUN vagrant box add jsecchiero/miner-amd --provider=libvirt --box-version=0.0.2
+RUN vagrant box add jsecchiero/miner-amd --provider=libvirt --box-version=0.0.3
 
 COPY vagrant.service /etc/systemd/system/
 COPY vagrant-up /usr/local/sbin/

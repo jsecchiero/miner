@@ -3,7 +3,7 @@
 Out-of-box toolkit for miners  
 
 The main goal is:
-- automatically associate each gpu with the correct VM with the latest driver installed*
+- automatically associate each gpu pci with the correct VM with the latest driver installed*
 - provide as much possible mining tool
 
 ## requirements
@@ -11,7 +11,7 @@ The main goal is:
 - cpu feature _VT-d_
 - kernel paramenter:
   - modprobe.blacklist=your gpu driver
-  - video=efifb:off
+  - video=efifb:off [optional if another non-pci gpu is available for normal workload es. X11]
   - intel_iommu=on
 - kernel module:
   - vfio

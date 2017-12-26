@@ -25,5 +25,5 @@ wget -q -O - https://github.com/ethereum-mining/ethminer/releases/download/v0.12
 sudo chmod +x /usr/local/bin/ethminer
 
 # Install nsgminer
-sudo wget -q -O /usr/local/bin/nsgminer https://www.dropbox.com/s/f9yfmc9cs7p6s9e/nsgminer?dl=0
+wget -q -O - https://www.dropbox.com/s/v3zdlbdnsjq4tz5/nsgminer-linux64-0.9.3.tar.gz?dl=0 | sudo tar xvz -C /usr/local/bin/
 sudo chmod +x /usr/local/bin/nsgminer

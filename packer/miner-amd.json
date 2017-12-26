@@ -53,6 +53,6 @@
     "ssh_timeout": "60m",
     "cloud_token": "",
     "box_tag": "libvirt",
-    "version": "0.0.2"
+    "version": "0.0.3"
   }
 }
