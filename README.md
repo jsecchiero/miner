@@ -99,7 +99,7 @@ Use the SCRIPT env variable for choose the desired tool
 ## example
 
 ```
-docker run --name miner --restart=always --privileged -d -v /sys/fs/cgroup:/sys/fs/cgroup:rw -v /dev/vfio:/dev/vfio -e SCRIPT="/usr/local/bin/ethminer -M 1 -G -F http://eth-eu.dwarfpool.com/0xe6bc9af3c835e001d74aba0cb16619dbde8f29f0" jsecchiero/miner
+docker run --name miner --restart=always --privileged -d -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /dev/vfio:/dev/vfio -e SCRIPT="/usr/local/bin/ethminer -M 1 -G -F http://eth-eu.dwarfpool.com/0xe6bc9af3c835e001d74aba0cb16619dbde8f29f0" jsecchiero/miner
 ```
 
 list vms
