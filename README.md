@@ -13,6 +13,7 @@ The main goal is:
   - modprobe.blacklist=your gpu driver
   - video=efifb:off [optional if another non-pci gpu is available for normal workload es. X11]
   - intel_iommu=on
+  - pcie_aspm=off
 - kernel module:
   - vfio
   - vfio_iommu_type1
@@ -28,11 +29,11 @@ The main goal is:
 
  _Fedora 27_
 ```
-GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/root rd.lvm.lv=fedora/swap rhgb quiet modprobe.blacklist=radeon,amdgpu intel_iommu=on  video=efifb:off"
+GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/root rd.lvm.lv=fedora/swap rhgb quiet modprobe.blacklist=radeon,amdgpu intel_iommu=on  video=efifb:off pcie_aspm=off"
 ```
 _Ubuntu 16.04_
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash modprobe.blacklist=radeon,amdgpu intel_iommu=on video=efifb:off"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash modprobe.blacklist=radeon,amdgpu intel_iommu=on video=efifb:off pcie_aspm=off"
 ```
 
 **2\. update grub config**  
